@@ -13,13 +13,26 @@ body {
 .card-block {
   margin: 10px;
 }
+.custom-select {
+  padding: 0;
+}
+#effect-input {
+  padding: 0px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
 #grid-size-input {
+  padding: 0px;
   margin-right: 5px;
   margin-left: 5px;
 }
 #background {
   padding: 0px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 #foreground {
   padding: 0px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
