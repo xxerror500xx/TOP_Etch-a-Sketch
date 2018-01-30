@@ -37,36 +37,40 @@
         <h4 class="card-title">
            <span class="card-subtitle mb-2">Options: </span>
          </h4>
-         <p class="settings small">
-           Grid:
-           <span id="resolution-set">
-             --- X ---
-           </span>
-           | BG:
-           <span id="color-bg-set">
-             White
-           </span>
-           | FG:
-           <span id="color-fg-set">
-             Black
-           </span>
-           | Effect:
-           <span id="color-ef-set">
-             none
-           </span>
-         </p>
+        <form class="form-inline">
+          <label class="mr-sm-2" for="inlineFormCustomSelect">Grid:
+          </label>
+          <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="grid-size-input">
+            <option selected>4 X 4</option>
+            <!-- <option value="1">4 X 4</option> -->
+            <option value="2">8 X 8</option>
+            <option value="3">10 X 10</option>
+          </select>
+
+          <label for="example-color-input" class="mb-2"> | BG: </label>
+          <input class="form-control col-1" type="color" value="#FFFFFF" id="background">
+          <label for="example-color-input" class="mb-2"> | FG: </label>
+          <input class="form-control col-1" type="color" value="#000000" id="foreground">
+
+          <label class="mr-sm-2" for="inlineFormCustomSelect"> | Effect:
+          </label>
+          <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="effect-input">
+            <option selected>None</option>
+            <!-- <option value="1">None</option> -->
+            <option value="2">Random FG color</option>
+            <option value="3">Fade FG color</option>
+          </select>
+        </form>
         <hr>
-        <button class="btn btn-primary" type="button" name="button">Create Grid</button>
+        <button class="btn btn-primary" type="button" name="button" id="create-grid">Create Grid</button>
+        <button class="btn btn-primary" type="button" name="button" id="reset-options">Reset Options</button>
       </div>
     </div>
-  </div>
-  <div class="container">
     <div class="card">
       <div class="card-block">
         <h4 class="card-title">
            <span class="card-subtitle mb-2">Grid: </span>
            <p class="settings small">
-             Grid:
              <span id="resolution-get">
                --- X ---
              </span>
@@ -84,14 +88,13 @@
              </span>
            </p>
          </h4>
-         <hr>
-         <div class="card-body">
+        <hr>
+        <div class="card-body">
 
-         </div>
+        </div>
       </div>
     </div>
   </div>
-
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

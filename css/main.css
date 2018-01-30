@@ -13,3 +13,13 @@ body {
 .card-block {
   margin: 10px;
 }
+#grid-size-input {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+#background {
+  padding: 0px;
+}
+#foreground {
+  padding: 0px;
+}
