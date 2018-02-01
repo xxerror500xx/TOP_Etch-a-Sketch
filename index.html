@@ -35,35 +35,46 @@
     <div class="card">
       <div class="card-block">
         <h4 class="card-title">
-           <span class="card-subtitle mb-2">Options: </span>
+           <span class="card-subtitle">Options: </span>
          </h4>
-        <form class="form-inline">
-          <label class="mr-sm-2" for="inlineFormCustomSelect">Grid:
-          </label>
-          <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="grid-size-input">
-            <option selected>4 X 4</option>
-            <!-- <option value="1">4 X 4</option> -->
-            <option value="2">8 X 8</option>
-            <option value="3">10 X 10</option>
-          </select>
+         <div class="row no-gutters">
+           <div class="dropdown col mb-3 align-content-center">
+             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuSize" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Size
+             </button>
+             <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+               <a class="dropdown-item active" href="#!">4 X 4</a>
+               <a class="dropdown-item" href="#!">8 X 8</a>
+               <a class="dropdown-item" href="#!">10 X 10</a>
+             </div>
+           </div>
+           <div class="dropdown col mb-3 align-content-center">
+             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Effect
+             </button>
+             <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+               <a class="dropdown-item active" href="#!">None</a>
+               <a class="dropdown-item" href="#!">Random color</a>
+               <a class="dropdown-item" href="#!">Fade color</a>
+             </div>
+           </div>
+         </div>
+         <div class="row no-gutters">
+           <div class="input-group col">
+             <label for="example-color-input" class=""> BG: </label>
+             <input class="" type="color" value="#FFFFFF" id="background">
+           </div>
+           <div class="input-group col">
+             <label for="example-color-input" class=""> FG: </label>
+             <input class="" type="color" value="#000000" id="foreground">
+           </div>
 
-          <label for="example-color-input" class="mb-2"> | BG: </label>
-          <input class="form-control col-1" type="color" value="#FFFFFF" id="background">
-          <label for="example-color-input" class="mb-2"> | FG: </label>
-          <input class="form-control col-1" type="color" value="#000000" id="foreground">
-
-          <label class="mr-sm-2" for="inlineFormCustomSelect"> | Effect:
-          </label>
-          <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="effect-input">
-            <option selected>None</option>
-            <!-- <option value="1">None</option> -->
-            <option value="2">Random FG color</option>
-            <option value="3">Fade FG color</option>
-          </select>
-        </form>
+         </div>
         <hr>
-        <button class="btn btn-primary" type="button" name="button" id="create-grid">Create Grid</button>
-        <button class="btn btn-primary" type="button" name="button" id="reset-options">Reset Options</button>
+        <div class="row no-gutters">
+          <button class="btn btn-primary col m-1" type="button" name="button" id="create-grid">Create Grid</button>
+          <button class="btn btn-primary col m-1" type="button" name="button" id="reset-options">Reset Options</button>
+        </div>
       </div>
     </div>
     <div class="card">
