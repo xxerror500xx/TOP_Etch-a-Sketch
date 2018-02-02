@@ -11,9 +11,11 @@ body {
 .card {
   margin: 5px;
 }
+
 .card-block {
   margin: 10px;
 }
+
 .custom-select {
   padding: 0;
 }
