@@ -1,36 +1,56 @@
 var options = {
+
   defaults: {
-    length: 10, // Number of rows
-    width: 10, // Number of colums
+    rows: 50, // Number of rows
+    columns: 50, // Number of colums
     bgColor: "#ffffff",
     fgColor: "#000000",
     effect: "none"
   },
-  displayGridResolution: function(length = this.defaults.length, width = this.defaults.width) {
-    $("#resolution-get").text(length + " X " + width);
+  settings: {},
+  setDefaults: function(){
+    options.settings = Object.assign({}, options.defaults);
   },
-  displayBG: function(bgColor = this.defaults.bgColor) {
-    $("#color-bg-get").text(bgColor);
-    $("#background").val(bgColor);
+  changeBG: function() {
+    options.settings.bgColor = $("#background").val();
+    console.log(options.defaults.bgColor);
   },
-  displayFG: function(fgColor = this.defaults.fgColor) {
-    $("#color-fg-get").text(fgColor);
-    $("#foreground").val(fgColor);
+  changeFG: function() {
+    options.settings.fgColor = $("#foreground").val();
   },
-  displayEffect: function(effect = this.defaults.effect) {
-    $("#color-ef-get").text(effect);
+  displayGridResolution: function() {
+    $("#resolution-get").text(this.settings.rows + " X " + this.settings.columns);
+  },
+  displayBG: function() {
+    $("#color-bg-get").text(this.settings.bgColor);
+    $("#background").val(this.settings.bgColor);
+  },
+  displayFG: function() {
+    $("#color-fg-get").text(this.settings.fgColor);
+    $("#foreground").val(this.settings.fgColor);
+  },
+  displayEffect: function() {
+    $("#color-ef-get").text(this.settings.effect);
   },
   clearGrid: function() {
     $("#grid").empty();
   },
-  makeGrid: function(rows = this.defaults.length, columns = this.defaults.width, bgColor = this.defaults.bgColor, fgColor = this.defaults.fgColor) {
-    options.clearGrid()
+  makeGrid: function() {
+    var rows = this.settings.rows;
+    var columns = this.settings.columns;
+    var bgColor = this.settings.bgColor;
+    var fgColor = this.settings.fgColor;
+    options.clearGrid();
+    options.displayGridResolution();
+    options.displayBG();
+    options.displayFG();
+    options.displayEffect();
     for (var i = 0; i < rows; i++) {
       $("#grid").append("<div id='gr-" + i + "' class='row'></div>");
       var height = $('#gr-' + i).width() / columns;
-      $("#gr-" + i).css('height', height + 'px')
+      $("#gr-" + i).css('height', height + 'px');
       for (var j = 0; j < columns; j++) {
-        $("#gr-" + i).append("<div id='cell-" + j + "' class='col h-100'></div>");
+        $("#gr-" + i).append("<div id='cell-" + j + "' class='col mh-0 p-0 h-100'></div>");
         var column = $("#gr-" + i + " #cell-" + j);
         column.css('background-color', bgColor);
         column.hover(
@@ -43,16 +63,17 @@ var options = {
 
   },
   resetToDefault: function() {
-    options.displayGridResolution();
-    options.displayBG();
-    options.displayFG();
-    options.displayEffect();
-    options.makeGrid();
+    options.setDefaults();
+    $("#background").val(options.defaults.bgColor);
+    $("#foreground").val(options.defaults.fgColor);
+    options.clearGrid();
+
   }
 };
 
 $("document").ready(function() {
-  // options.resetToDefault();
+  options.setDefaults();
+  options.resetToDefault();
 });
 $(window).resize(function() {
   options.clearGrid();
