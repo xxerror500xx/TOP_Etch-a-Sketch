@@ -48,7 +48,7 @@
                <a class="dropdown-item" href="#!">10 X 10</a>
              </div>
            </div>
-           <div class="dropdown col mb-3 align-content-center">
+           <!-- <div class="dropdown col mb-3 align-content-center">
              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                Effect
              </button>
@@ -57,7 +57,7 @@
                <a class="dropdown-item" href="#!">Random color</a>
                <a class="dropdown-item" href="#!">Fade color</a>
              </div>
-           </div>
+           </div> -->
          </div>
          <div class="row no-gutters">
            <div class="input-group col">
@@ -72,7 +72,7 @@
          </div>
         <hr>
         <div class="row no-gutters">
-          <button class="btn btn-primary col m-1" type="button" name="button" id="create-grid">Create Grid</button>
+          <button class="btn btn-primary col m-1" type="button" name="button" id="create-grid" onclick="options.makeGrid()">Create Grid</button>
           <button class="btn btn-primary col m-1" type="button" name="button" id="reset-options">Reset Options</button>
         </div>
       </div>
@@ -96,8 +96,7 @@
            </p>
          </h4>
         <hr>
-        <div id="grid" class="card-body">
-
+        <div id="grid" class="card-body pt-2 pb-2 border border-light">
         </div>
       </div>
     </div>
