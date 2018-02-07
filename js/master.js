@@ -1,6 +1,7 @@
 var options = {
 
   defaults: {
+    resolution: "#g20",
     rows: 20, // Number of rows
     columns: 20, // Number of colums
     bgColor: "#ffffff",
@@ -24,6 +25,34 @@ var options = {
     options.settings.effect = effect;
     $(effect).addClass('active');
   },
+  changeResolution: function(resolution) {
+    $(options.settings.resolution).removeClass('active');
+    options.settings.resolution = resolution;
+    $(resolution).addClass('active');
+    switch (resolution) {
+      case '#g10':
+        $("#resolution-get").text("10 X 10");
+        options.settings.rows = 10;
+        options.settings.columns = 10;
+        break;
+      case '#g20':
+        $("#resolution-get").text("20 X 20");
+        options.settings.rows = 20;
+        options.settings.columns = 20;
+        break;
+      case '#g30':
+        $("#resolution-get").text("30 X 30");
+        options.settings.rows = 30;
+        options.settings.columns = 30;
+        break;
+      default:
+      options.settings.rows = 20;
+      options.settings.columns = 20;
+        $("#resolution-get").text("20 X 20");
+
+    }
+
+  },
   displayGridResolution: function() {
     $("#resolution-get").text(this.settings.rows + " X " + this.settings.columns);
   },
@@ -36,7 +65,19 @@ var options = {
     $("#foreground").val(this.settings.fgColor);
   },
   displayEffect: function() {
-    $("#color-ef-get").text(this.settings.effect);
+    switch (this.settings.effect) {
+      case "#effRndColor":
+        $("#color-ef-get").text("Random Color");
+        break;
+      case "#effFadeColor":
+        $("#color-ef-get").text("Fade Color");
+        break;
+      case "#effNone":
+        $("#color-ef-get").text("None");
+        break;
+      default:
+        $("#color-ef-get").text("None");
+    }
   },
   clearGrid: function() {
     $("#grid").empty();

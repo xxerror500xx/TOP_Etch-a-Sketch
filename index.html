@@ -38,22 +38,22 @@
            <span class="card-subtitle">Options: </span>
          </h4>
          <div class="row no-gutters">
-           <!-- <div class="dropdown col mb-3 align-content-center">
+           <div class="dropdown col mb-3 align-content-center">
              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuSize" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                Size
              </button>
              <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-               <a class="dropdown-item active" href="#!">4 X 4</a>
-               <a class="dropdown-item" href="#!">8 X 8</a>
-               <a class="dropdown-item" href="#!">10 X 10</a>
+               <a class="dropdown-item" href="#!" id="g10" onclick="options.changeResolution('#g10')">10 X 10</a>
+               <a class="dropdown-item active" href="#!" id="g20" onclick="options.changeResolution('#g20')">20 X 20</a>
+               <a class="dropdown-item" href="#!" id="g30" onclick="options.changeResolution('#g30')">30 X 30</a>
              </div>
-           </div> -->
+           </div>
            <div class="dropdown col mb-3 align-content-center">
              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                Effect
              </button>
              <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-               <a id="effNone" class="dropdown-item active" href="#!" onclick="options.changeEff('#effNone')">None</a>
+               <a id="effNone" class="dropdown-item active" href="#!" onclick="options.changeResolution('#effNone')">None</a>
                <a id="effRndColor" class="dropdown-item" href="#!" onclick="options.changeEff('#effRndColor')">Random color</a>
                <a id="effFadeColor" class="dropdown-item" href="#!" onclick="options.changeEff('#effFadeColor')">Fade color</a>
              </div>
